@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# != 1 ]]; then
+    echo "Usage: just init <module-path>" >&2
+    exit 2
+fi
+
+module=$1
+if [[ "$(go list -m)" != example.com/project ]]; then
+    echo "This project is already initialized. Edit its module path explicitly if needed." >&2
+    exit 1
+fi
+
+# Validate the module path before changing project files.
+scratch=$(mktemp -d)
+trap 'rm -rf "$scratch"' EXIT
+(cd "$scratch" && go mod init "$module")
+
+go mod edit "-module=$module"
+sed -i "s|example\\.com/project|$module|g" cmd/app/main.go internal/cli/root.go .golangci.yml README.md
+go mod tidy
+printf 'Initialized %s. Run just check next.\n' "$module"
