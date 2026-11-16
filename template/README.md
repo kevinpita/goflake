@@ -66,8 +66,8 @@ help. Add commands and rename `app` when the project needs them.
 
 ## Development tools
 
-The locked environment supplies Go 1.27, Just, golangci-lint, gopls, Delve,
-staticcheck, goimports, and Go editor/generator tools. It also supplies a native
+The locked environment supplies Go 1.27.3, Just, golangci-lint 2.15.0, gopls,
+Delve, staticcheck, goimports, and Go editor/generator tools. It also supplies a native
 C/C++ compiler, pkg-config, Make, CMake, Bash, core shell utilities, Git, curl,
 jq, and nixfmt. Linux environments include GDB.
 

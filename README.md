@@ -68,8 +68,8 @@ module maintenance, and cleanup commands.
 
 | Area | Included |
 | --- | --- |
-| Go | Go 1.27, gopls, Delve, staticcheck, editor/generator tools |
-| Checks | golangci-lint, gofumpt and goimports through golangci-lint |
+| Go | Go 1.27.3, gopls, Delve, staticcheck, editor/generator tools |
+| Checks | golangci-lint 2.15.0, gofumpt and goimports through golangci-lint |
 | Native builds | C/C++ compiler, pkg-config, Make, CMake, GDB on Linux |
 | Commands | Just, Bash, core shell utilities, Git, curl, jq, nixfmt |
 
